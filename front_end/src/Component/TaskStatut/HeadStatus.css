@@ -1,0 +1,17 @@
+.headStatus {
+    display: flex;
+    color: rgb(161, 163, 171);
+    align-items: center;
+    gap: 10px;
+}
+
+.headStatus p{
+    color: rgb(255, 103, 103);
+font-family: Inter;
+font-size: 15px;
+font-weight: 500;
+line-height: 18px;
+letter-spacing: 0%;
+text-align: left;
+}
+ 

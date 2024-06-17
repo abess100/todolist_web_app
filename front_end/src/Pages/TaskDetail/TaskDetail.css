@@ -1,0 +1,31 @@
+.conteneur-Taskdetail {
+    width: 100%;
+    border: 1px solid;
+    padding: 12px;
+    margin: 60px 60px 0px 60px;
+    border-radius: 10px;
+    border: 1px solid rgba(161, 163, 171, 0.63);
+border-radius: 16px;
+
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.Taskdetail-head{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.taskText p{
+    /* margin-top: -15px; */
+}
+
+.imgTask {
+    width: 210px;
+}
+
+.imgTask img {
+    width: 100%;
+    border-radius: 12px;
+
+}

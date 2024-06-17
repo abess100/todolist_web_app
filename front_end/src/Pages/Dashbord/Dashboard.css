@@ -1,0 +1,45 @@
+.dashboard {
+    height: 100vh;
+}
+
+
+.conteneur {
+    display: flex;
+}
+
+.conteneur-dashboard {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+
+    margin: 0 20px;
+}
+
+.to-do {
+    border-radius: 14px;
+    width: 50%;
+    box-shadow: 0px 5px 11px 0px rgba(0, 0, 0, 0.04), 0px 19px 19px 0px rgba(0, 0, 0, 0.03), 0px 44px 26px 0px rgba(0, 0, 0, 0.02), 0px 77px 31px 0px rgba(0, 0, 0, 0.01), 0px 121px 34px 0px rgba(0, 0, 0, 0);
+    background: rgb(245, 248, 255);
+    padding: 15px;
+}
+
+.addTask {
+    width: 50%;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 30px;
+}
+
+
+.statusTask {
+    border-radius: 14px;
+    background: rgb(245, 248, 255);
+    padding: 10px 20px;
+    margin-bottom: 20px;
+
+}

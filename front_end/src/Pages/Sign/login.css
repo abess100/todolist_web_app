@@ -1,0 +1,125 @@
+.Login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f2f5;
+
+}
+
+.login-content {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 50px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.image-login {
+    width: 50%;
+}
+
+.image-login img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    position: relative;
+    width: 100%;
+    /* margin-bottom: 10px; */
+}
+
+.input input {
+    width: 400px;
+}
+
+.text-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form .input{
+    margin-bottom: 12px;
+}
+
+.input .icon-input {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    transform: translateY(-50%);
+}
+
+.input input {
+    padding: 12px 24px 12px 40px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.input input:focus {
+    outline: none;
+}
+
+.checkboxe {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: -12px;
+}
+
+.checkboxe input {
+    width: 15px;
+}
+
+.checkboxe p {
+    font-size: 14px;
+}
+
+.connexion {
+    width: fit-content;
+    color: white;
+    background-color: rgb(242, 30, 30);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: left;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
+
+.connexion_teams {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 400px;
+    margin-top: 20px;
+}
+
+.connexion_teams img {
+    width: 27px;
+    height: 27PX;
+}
+
+.connexion_teams h4 {
+    font-weight: 400;
+}
+
+.register{
+    width: 400px;
+    margin-top: -10px;
+}
+
+a {
+    text-decoration: none;
+    color:  rgb(242, 30, 30); ;
+}

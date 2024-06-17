@@ -1,0 +1,23 @@
+.headStatus {
+    display: flex;
+    color: rgb(161, 163, 171);
+    align-items: center;
+    gap: 10px;
+}
+
+.headStatus p{
+    color: rgb(255, 103, 103);
+font-family: Inter;
+font-size: 15px;
+font-weight: 500;
+line-height: 18px;
+letter-spacing: 0%;
+text-align: left;
+}
+
+.CompleTask {
+    border-radius: 14px;
+    box-shadow: 0px 5px 11px 0px rgba(0, 0, 0, 0.04), 0px 19px 19px 0px rgba(0, 0, 0, 0.03), 0px 44px 26px 0px rgba(0, 0, 0, 0.02), 0px 77px 31px 0px rgba(0, 0, 0, 0.01), 0px 121px 34px 0px rgba(0, 0, 0, 0);
+    background: rgb(245, 248, 255);
+    padding: 15px;
+}

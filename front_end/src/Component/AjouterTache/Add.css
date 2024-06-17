@@ -1,0 +1,51 @@
+ .AddTaskPop {
+    border: 1px solid ;
+    border-radius: 5px;
+    position: fixed;
+    background-color: rgba(0,0,0, 0.6);
+    top: 0;
+    left: 0;
+    right: 0;   
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+ }
+
+ .popUp {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+ }
+
+ input {
+    width: 60%;
+    height: 37px;
+    padding: 3px;
+    box-sizing: border-box;
+border: 1px solid rgb(161, 163, 171);
+border-radius: 6px;
+
+
+ }
+
+ select {
+    width: fit-content;
+    padding: 3px;
+    box-sizing: border-box;
+    border: 1px solid rgb(161, 163, 171);
+    border-radius: 6px;
+    margin-bottom: 10px;
+ }
+
+.descript {
+    display: flex;
+}
+
+textarea {
+    width: 85%;
+    padding: 10px;
+}

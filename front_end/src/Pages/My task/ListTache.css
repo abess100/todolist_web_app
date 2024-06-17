@@ -1,0 +1,77 @@
+.ListTasks {
+    margin-top: 50px;
+}
+
+.addTask {
+    border-radius: 14px;
+    box-shadow: 0px 5px 11px 0px rgba(0, 0, 0, 0.04), 0px 19px 19px 0px rgba(0, 0, 0, 0.03), 0px 44px 26px 0px rgba(0, 0, 0, 0.02), 0px 77px 31px 0px rgba(0, 0, 0, 0.01), 0px 121px 34px 0px rgba(0, 0, 0, 0);
+    background: rgb(245, 248, 255);
+    padding: 15px;
+}
+
+.TitleTask {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.image {
+    width: 50%;
+}
+
+.image img {
+    width: 100%;
+}
+
+.element {
+    width: 60%;
+}
+
+.element h3 {
+    color: rgb(0, 0, 0);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.element p {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.element span {
+    color: rgb(242, 30, 30);
+}
+
+.element .statusTask {
+    color: rgb(242, 30, 30);
+}
+
+.button, .button0{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button1 {
+    background-color: rgb(255, 103, 103);
+    width: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+

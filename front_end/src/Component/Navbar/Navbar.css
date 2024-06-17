@@ -1,0 +1,96 @@
+.Navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 30px;
+    box-shadow: -1px 4px 10px 0px rgba(0, 0, 0, 0.04),-4px 17px 18px 7px rgba(0, 0, 0, 0.03),-9px 39px 24px 0px rgba(0, 0, 0, 0.02),-17px 69px 28px 0px rgba(0, 0, 0, 0.01),-26px 108px 31px 0px rgba(0, 0, 0, 0);
+
+}
+
+.research{
+    display: flex;
+    width: 70%;
+}
+
+.part2{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.research input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid rgb(254, 254, 254);
+    box-shadow: -1px 0px 10px 5px rgba(0, 0, 0, 0.04),-4px 17px 18px 7px rgba(0, 0, 0, 0.03),-9px 39px 24px 0px rgba(0, 0, 0, 0.02),-17px 69px 28px 0px rgba(0, 0, 0, 0.01),-26px 108px 31px 0px rgba(0, 0, 0, 0);
+}
+.research input:active, .research input:focus {
+    outline: none;
+}
+
+.research .icone-reseach {
+    background: rgb(255, 103, 103);
+    width: 36px;
+    height: 38px;
+    border-radius: 0px 8px 8px 0px;
+    border: none;
+    display: flex;
+    justify-content: content;
+    align-items: center;
+}
+
+.icon-search{
+    color: white;
+    font-size: 20px;  
+}
+
+.icone{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.icone .icone1{
+    width: 34px;
+    padding: 8px;
+    border-radius: 8px;
+    background: rgb(255, 103, 103);
+    color: white;
+}
+
+.time{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+.date{
+    color: rgb(0, 0, 0);
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: left; 
+}
+
+.time{
+    color: rgb(58, 190, 255);
+font-family: Inter;
+font-size: 14px;
+font-weight: 500;
+line-height: 17px;
+letter-spacing: 0%;
+text-align: left;
+}
+
+
+
+
+
+

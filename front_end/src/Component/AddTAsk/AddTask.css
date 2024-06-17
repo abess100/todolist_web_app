@@ -1,0 +1,30 @@
+.AddTask {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.add p{
+    color: rgb(255, 103, 103);
+font-family: Inter;
+font-size: 15px;
+font-weight: 500;
+line-height: 18px;
+letter-spacing: 0%;
+text-align: left;
+}
+.AddTask .addButton{
+    border: none;
+    width: fit-content;
+    color: rgb(255, 103, 103);
+  background: rgb(245, 248, 255);
+  cursor: pointer;
+
+}

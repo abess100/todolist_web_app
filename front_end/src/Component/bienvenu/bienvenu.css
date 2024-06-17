@@ -1,0 +1,21 @@
+h1 {
+    color: rgb(0, 0, 0);
+    font-family: Inter;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 34px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.bienvenue img {
+    width: 40px;
+    height: 40px;
+}
+
+.bienvenue {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
