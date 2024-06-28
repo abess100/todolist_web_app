@@ -3,7 +3,9 @@ import { BsClipboardCheck } from "react-icons/bs";
 import CartToto from "../Cart_todo/CartToto";
 import './CompletTask.css';
 
+
 export default function CompleTask() {
+  
   return (
     <div className="CompleTask ">
       <div className="headStatus">

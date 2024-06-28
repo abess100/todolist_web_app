@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../Component/Navbar/Navbar";
 import Menu from "../../Component/Menu/Menu";
 import "./Dashboard.css";
@@ -8,29 +8,37 @@ import Bienvenue from "../../Component/bienvenu/Bienvenue";
 import Inviter from "../../Component/InviteMembre/Inviter";
 import CompleTask from "../../Component/CompleteTask/CompleTask";
 import Graphik from "../../Component/Graph/Graphik";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
+  const navigate = useNavigate()
+    useEffect(() => {
+      if(!localStorage.getItem('token')) {
+            navigate('/login')
+      }
+    });
+
   return (
     <div className="dashboard">
       <Navbar />
       <div className="conteneur">
         {/* menu latéral */}
         <Menu />
-        
+
         {/* dashboard */}
-        <div className="Todo">
+        <div className="Todo" style={{width:"100%"}}>
           <div className="head">
             <Bienvenue />
             <Inviter />
           </div>
           <div className="conteneur-dashboard">
             <div className="to-do">
-              <CartDah />
+              <CartDah  />
             </div>
             <div className="addTask">
               <div className="statusTask">
-                <Status/>
-                <Graphik/>
+                <Status />
+                <Graphik />
               </div>
               <div className="TaskComplet">
                 <CompleTask />

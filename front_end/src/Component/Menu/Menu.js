@@ -9,6 +9,7 @@ import "./Menu.css";
 
 export default function Menu(id) {
 
+
     const location = useLocation();
     return (
         <div className="Menu">
@@ -32,13 +33,13 @@ export default function Menu(id) {
                         </Link>
                        
                     </li>
-                    <li>
+                    {/* <li>
                         <Link to="/category"  className={location.pathname === "/category" ? 'active':'notactive'}>
                             <BsListTask size={24}  className="icons" />
                             Categorie
                         </Link>
 
-                    </li>
+                    </li> */}
                     <li>
                         <Link to="/setting"  className={location.pathname === "/setting" ? 'active':'notactive'}>
                             <IoMdSettings size={24}  className="icons" />
