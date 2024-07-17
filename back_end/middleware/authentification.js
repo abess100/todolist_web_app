@@ -42,12 +42,12 @@ const Authentify = async (req, res, next) => {
             if(err){
                 console.log(err);
             } else {
-                console.log(decodeToken.id);
+                // console.log(decodeToken.id);
                 next();
             }
         })
     } else {
-       return res.json('pas de token') 
+       console.log('pas de token') 
     }
 }
 

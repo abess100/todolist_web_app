@@ -1,13 +1,20 @@
 const express = require('express')
 const router = express.Router()
+const User = require('../Models/UserModel')
 const { register, login, logout , forget} = require('../Controller/authController')
-const {putUser, deleteUser, updatepassword, updatePicture} = require('../Controller/userController')
+const {getId, putUser, deleteUser, updatepassword, updatePicture} = require('../Controller/userController')
+
+
 // authentification user
 router.post('/login', login )
 router.post('/register', register )
-// router.post ('/forgetpass', forget)
+router.get('/logout', logout )
+router.post('/forget',  forget)
+
+
 
 // route utilisateur 
+router.get("/:id", getId)
 router.put("/:id", putUser);
 router.delete("/:id", deleteUser);
 

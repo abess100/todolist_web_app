@@ -3,12 +3,13 @@ require('dotenv').config({ path: './.env' });
 require('./Config/Db');
 const app = express();
 const bodyParser = require('body-parser');
+const cookieparser = require('cookie-parser');
+
+const  {checkUser, Authentify, verify} = require('./middleware/authentification')
 const UserRoute = require('./Routes/UserRoute');
 const TaskRoute = require('./Routes/TaskRoute');
 const StatusRoute = require('./Routes/StatusRoute');
 const priorityRouter = require('./Routes/PriorityRoute');
-// const authenticateToken = require('./middleware/authentification');
-const  {checkUser, Authentify, verify} = require('./middleware/authentification')
 const cors = require('cors');
 
 
@@ -17,13 +18,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors({origin:true, credentials: true}));
 app.use(express.static('Public')) 
+app.use(cookieparser())
 
-app.get('/verify' , verify, async (req,res) => {
-    return res.json('authorizied ')
+// auth verification
+app.get('*', checkUser)
+app.get('/jwtid', Authentify, (req,res) => {
+    res.status(200).json({status: 'success', id: res.locals.user._id})
 })
-// app.get('/auth', Authentify, (req,res)=>{
-//     res.status(200).json(res.locals.user._id)
-// })
+
 app.get('/', (req, res) => {
     res.send('Hello World from Server')
 })

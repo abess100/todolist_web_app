@@ -1,6 +1,19 @@
 const User = require("../Models/UserModel");
 const bcrypt = require("bcrypt");
 
+
+const getId = async (req, res) => {
+    const { id } = req.params;
+    try{
+        const user = await User.findById(id);
+        if(!user) { 
+           return res.json({"message": "user not found"});
+        }
+        res.status(200).json(user);
+    } catch(err){
+        res.status(500).json(err);
+    }
+}
 const putUser =  async (req, res) => {
     const { id } = req.params;
     const {name, email, pseudo} = req.body;
@@ -98,4 +111,4 @@ const updatePicture = async (req, res) => {
 }
 
 
-module.exports = {putUser, deleteUser, updatepassword, updatePicture}
+module.exports = {getId, putUser, deleteUser, updatepassword, updatePicture}
