@@ -11,13 +11,7 @@ import Graphik from "../../Component/Graph/Graphik";
 import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
-  const navigate = useNavigate()
-    useEffect(() => {
-      if(!localStorage.getItem('token')) {
-            navigate('/login')
-      }
-    });
-
+   
   return (
     <div className="dashboard">
       <Navbar />

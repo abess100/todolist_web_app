@@ -9,27 +9,48 @@ import Setting from "./Pages/params/Setting";
 import ForgetPass from "./Pages/Sign/ForgetPass";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { UidContext } from "./Component/Routes/AppContext";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const queryClient = new QueryClient();
 function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <div className="App">
-        <Router>
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/task" element={<ListTache />} />
-            <Route path="/task/:id" element={<TaskDetail />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/forgetPass" element={<ForgetPass />} />
-            <Route path="/setting" element={<Setting />} />
-          </Routes>
-        </Router>
-      </div>
+  const [uid, setUid] = useState(null);
 
-      <ReactQueryDevtools initialIsOpen={true} />
-    </QueryClientProvider>
+  useEffect(() => {
+    const fecthToken = async () => {
+      axios.get('http://localhost:1000/jwtid',
+        {withCredentials: true}
+      )
+        .then((res) => {
+          setUid(res.data)
+        })
+        .catch((err) => console.log('il y a une erreur')) 
+    };
+    fecthToken();
+  },[])
+
+
+  return (
+    <UidContext.Provider value={uid}>
+      <QueryClientProvider client={queryClient}>
+        <div className="App">
+          <Router>
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/task" element={<ListTache />} />
+              <Route path="/task/:id" element={<TaskDetail />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/forgetPass" element={<ForgetPass />} />
+              <Route path="/setting" element={<Setting />} />
+            </Routes>
+          </Router>
+        </div>
+
+        <ReactQueryDevtools initialIsOpen={true} />
+      </QueryClientProvider>
+    </UidContext.Provider>
   );
 }
 

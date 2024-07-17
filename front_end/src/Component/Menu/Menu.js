@@ -1,23 +1,47 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { RiDashboardHorizontalFill } from "react-icons/ri";
 import { BiTask } from "react-icons/bi";
-import { BsListTask } from "react-icons/bs";
 import { IoMdSettings } from "react-icons/io";
 import { LuLogOut } from "react-icons/lu";
 import "./Menu.css";
+import axios from "axios";
+import { UidContext } from "../Routes/AppContext";
+import cookie from 'js-cookie'
 
 export default function Menu(id) {
+    const navigate = useNavigate()
+    const Uid = useContext(UidContext)
+    const removeCookies = (key) => {
+        if(window !== 'undefined') {
+            cookie.remove(key, {expires: 1});
+        }
+    }
+    const logout = async () => {
+        await axios.get("http://localhost:1000/user/logout", {withCredentials: true})
+        .then(() => {
+            removeCookies('token');
+        })
+        .catch((err) => console.log(err))
+        navigate("/login")
+    }
 
 
     const location = useLocation();
     return (
         <div className="Menu">
+        {Uid ? (
+            <>
+                bonjour
+            </>
+        ):(
             <div className="profil">
                 <img src="./profile.jpg" alt="" />
                 <h3 className="nom"> jean</h3>
                 <p className="meil">jean@gmail.com</p>
             </div>
+        )}
+          
             <div className="Nav-menu">
                 <ul>
                     <li >
@@ -47,10 +71,10 @@ export default function Menu(id) {
                         </Link>
                     </li>
                 </ul>
-                <div className="logout">
+                <button className="logout" style={{backgroundColor: "#FF6767"}}  onClick={logout}>
                     <LuLogOut size={24} color="white" />
-                    <p>Deconnexion</p>
-                </div>
+                    <p >Deconnexion</p>
+                </button>
             </div>
         </div>
     );

@@ -11,36 +11,28 @@ export default function Login() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  axios.defaults.withCredentials = true
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-      axios.defaults.withCredentials = true
     axios.post('http://localhost:1000/user/login',
       {
         email: email,
         password: password
+      },
+      {
+        withCredentials: true
       }
     )
     .then(res =>{
-      console.log(res.data.user);
-      localStorage.setItem('token', JSON.stringify(res.data.token));
-      localStorage.setItem('user', JSON.stringify(res.data.user));
-        navigate('/') 
+      navigate('/')
+     
     })
     .catch(err => console.log(err))
-   
+
   };
 
-  useEffect(() => {
-    if(localStorage.getItem('token')){
-      navigate('/')
-    }
-  })
-
-
-
-    
+   
 
   return (
     <div className="Login">
@@ -50,20 +42,23 @@ export default function Login() {
         </div>
         <div className="text-content">
           <h1>Connexion</h1>
-          <form action onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <div className="input">
               <FaUser className="icon-input" />
               <input type="email" 
+                  placeholder="Entrez votre nom"
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Entrez votre nom" />
+                   />
               <p className="email error"></p>
             </div> 
     
             <div className="input">
               <RiLockPasswordFill className="icon-input" />
               <input type="password"
-              onChange={(e) => setPassword(e.target.value)}
-                 placeholder="Entrez votre mot de passe" />
+                 placeholder="Entrez votre mot de passe" 
+                onChange={(e) => setPassword(e.target.value)}
+
+                 />
                  <p className="password"></p>
             </div>
             

@@ -7,7 +7,7 @@ import {useQuery, useQueryClient} from '@tanstack/react-query'
 export default function CartDah() {
 
   const queryClient = useQueryClient();
-  const {data:Task, error, isLoading} = useQuery({
+  const {data:Task, isLoading} = useQuery({
     queryKey: ["Task"],
     queryFn: () => 
       axios
@@ -26,10 +26,7 @@ export default function CartDah() {
   return (
     <div className="CartDah">
       <AddTask />
-      {Task && <CartToto data={Task} />}
-      {/* <CartToto data={Task} /> */}
-    
-     
+      <CartToto data={Task} />    
     </div>
   );
 }
