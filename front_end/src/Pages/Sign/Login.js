@@ -42,7 +42,7 @@ export default function Login() {
         </div>
         <div className="text-content">
           <h1>Connexion</h1>
-          <form onSubmit={handleSubmit}>
+          <form  onSubmit={handleSubmit}>
             <div className="input">
               <FaUser className="icon-input" />
               <input type="email" 

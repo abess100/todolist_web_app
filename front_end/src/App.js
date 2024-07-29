@@ -9,26 +9,29 @@ import Setting from "./Pages/params/Setting";
 import ForgetPass from "./Pages/Sign/ForgetPass";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { UidContext } from "./Component/Routes/AppContext";
 import { useEffect, useState } from "react";
+import { UidContext } from "./Context/AppContext";
 import axios from "axios";
+import Profil from "./Pages/Profil/Profil";
 
-const queryClient = new QueryClient();
+
 function App() {
+  const queryClient = new QueryClient();
   const [uid, setUid] = useState(null);
 
   useEffect(() => {
     const fecthToken = async () => {
-      axios.get('http://localhost:1000/jwtid',
+      await  axios.get('http://localhost:1000/jwtid',
         {withCredentials: true}
       )
         .then((res) => {
-          setUid(res.data)
+          setUid(res.data.id)
+          console.log(res.data);
         })
         .catch((err) => console.log('il y a une erreur')) 
     };
     fecthToken();
-  },[])
+  },[uid])
 
 
   return (
@@ -40,14 +43,15 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/task" element={<ListTache />} />
               <Route path="/task/:id" element={<TaskDetail />} />
-              <Route path="/login" element={<Login />} />
+              <Route path="/login" element={ <Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/forgetPass" element={<ForgetPass />} />
               <Route path="/setting" element={<Setting />} />
+              <Route path="/profil" element={<Profil />} />
+              <Route path="*" element={<Setting/>} />
             </Routes>
           </Router>
         </div>
-
         <ReactQueryDevtools initialIsOpen={true} />
       </QueryClientProvider>
     </UidContext.Provider>

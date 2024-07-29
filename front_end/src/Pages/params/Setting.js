@@ -4,7 +4,7 @@ import Login from '../Sign/Login'
 export default function Setting() {
   return (
     <div>
-      <Login />
+      paramètres de l'application 
     </div>
   )
 }
